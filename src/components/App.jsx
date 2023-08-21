@@ -1,16 +1,19 @@
-export const App = () => {
+import InputPhoneBook from "./inputPhoneBook/inputPhoneBook";
+import ContactsList from "./contactsList/contactsList";
+import FindContact from "./findContact/findContact";
+import { Formik } from "formik";
+import css from "./app.module.css";
+
+export function App() {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <Formik>
+      <div className={css.appContainer}>
+        <h1>Phonebook</h1>
+        <InputPhoneBook />
+        <h1>Contacts</h1>
+        <FindContact />
+        <ContactsList />
+      </div>
+    </Formik>
   );
-};
+}
